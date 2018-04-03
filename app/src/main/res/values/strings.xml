@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Shindig</string>
+    <string name="login_email">Email</string>
+    <string name="login_password">Password</string>
+    <string name="login_submit">Login</string>
+    <string name="action_settings">What</string>
+</resources>
