@@ -20,7 +20,7 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/main_login" />
+    <include layout="@layout/session_questions" />
 
 
 </android.support.design.widget.CoordinatorLayout>

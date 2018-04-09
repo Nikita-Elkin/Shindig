@@ -4,4 +4,12 @@
     <string name="login_password">Password</string>
     <string name="login_submit">Login</string>
     <string name="action_settings">What</string>
+    <string name="question_title"><u>Your Shindig</u></string>
+    <string name="question_when">Schedule It:</string>
+    <string name="when_1">Within 1 hour</string>
+    <string name="when_2">Later Today</string>
+    <string name="when_3">This Week/Month</string>
+    <string name="how_many">With:</string>
+    <string name="people">Coworkers</string>
+    <string name="finish">Finish</string>
 </resources>
