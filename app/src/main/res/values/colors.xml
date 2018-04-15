@@ -8,5 +8,6 @@
 <color name="black">#000000</color>
 <color name="grey_border">#555555</color>
 <color name="grey_hint">#595959</color>
+    <color name="blue">#2798da</color>
     <color name="button_clicked">#b8ffffff</color>
 </resources>
