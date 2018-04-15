@@ -8,6 +8,6 @@ public class Matching extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_matching);
+        setContentView(R.layout.activity_matching_Galaxy5_Pixel1);
     }
 }
