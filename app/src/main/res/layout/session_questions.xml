@@ -17,7 +17,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:layout_marginTop="25dp">
+            android:layout_marginTop="30dp">
 
             <TextView
                 android:id="@+id/textView"
@@ -31,7 +31,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="120dp"
+            android:layout_marginTop="140dp"
             android:gravity="center_horizontal">
 
             <TextView
@@ -49,7 +49,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="190dp"
+            android:layout_marginTop="210dp"
             android:gravity="center_horizontal">
 
             <RadioGroup
@@ -91,7 +91,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="370dp"
+            android:layout_marginTop="390dp"
             android:gravity="center_horizontal">
 
             <TextView
@@ -107,7 +107,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
-            android:layout_marginTop="430dp">
+            android:layout_marginTop="450dp">
 
             <EditText
                 android:id="@+id/editText3"
@@ -143,7 +143,7 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:text="@string/finish"
-            android:layout_marginTop="510dp"
+            android:layout_marginTop="550dp"
             android:width="100dp"
             android:textColor="@color/white"
             android:background="@drawable/question_button"
