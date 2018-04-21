@@ -15,4 +15,17 @@
     <string name="hello">Hello, Sample</string>
     <string name="connect">Your Connections This Month:</string>
     <string name="title_activity_main2">Main2Activity</string>
+    <string name="confirm">Let\'s Lunch!</string>
+    <string name="deny">Maybe Later</string>
+    <string name="middle_card">Middle business card</string>
+    <string name="left_card">Left business card</string>
+    <string name="right_card">Right business card</string>
+    <string name="candidate_image">Image of possible Shindig candidate</string>
+    <string name="shindig_logo">Shindig logo</string>
+    <string name="home_button">Home button</string>
+    <string name="home">Home</string>
+    <string name="settings_button">Settings button</string>
+    <string name="confirm_button">Confirm current candidate button</string>
+    <string name="deny_button">Deny current candidate button</string>
+    <string name="title_activity_home">Home</string>
 </resources>
