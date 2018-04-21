@@ -13,7 +13,9 @@
     <string name="people">Coworkers</string>
     <string name="finish">Finish</string>
     <string name="hello">Hello, Sample</string>
-    <string name="connect">Your Connections This Month:</string>
+    <string name="total">Connections \nMade</string>
+    <string name="events">Events \nScheduled</string>
+    <string name="shindigs">Shindigs \nStarted</string>
     <string name="title_activity_main2">Main2Activity</string>
     <string name="confirm">Let\'s Lunch!</string>
     <string name="deny">Maybe Later</string>
@@ -28,4 +30,5 @@
     <string name="confirm_button">Confirm current candidate button</string>
     <string name="deny_button">Deny current candidate button</string>
     <string name="title_activity_home">Home</string>
+    <string name="RandNum">0</string>
 </resources>
