@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         b1=(Button) findViewById(R.id.button);
-        mEdit = (EditText)findViewById(R.id.editText);
+        mEdit = (EditText)findViewById(R.id.emailEditText);
         b1.setOnClickListener(
                 new View.OnClickListener()
                 {

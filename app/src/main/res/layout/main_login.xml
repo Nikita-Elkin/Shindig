@@ -18,10 +18,27 @@
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/login_background" />
+
+    <ImageView
+        android:id="@+id/shindigLogo"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:paddingEnd="20dp"
+        android:paddingLeft="0dp"
+        android:paddingRight="20dp"
+        android:paddingStart="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/emailEditText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo" />
+
 
     <EditText
         android:id="@+id/emailEditText"
@@ -44,22 +61,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/shindigLogo" />
 
-
-    <ImageView
-        android:id="@+id/shindigLogo"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:paddingEnd="20dp"
-        android:paddingLeft="0dp"
-        android:paddingRight="20dp"
-        android:paddingStart="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/50%"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo" />
-
     <EditText
         android:id="@+id/editText2"
         android:layout_width="wrap_content"
@@ -75,7 +76,7 @@
         android:inputType="textPassword"
         android:paddingBottom="13dp"
         android:textColorHint="@color/grey_hint"
-        app:layout_constraintBottom_toTopOf="@+id/80%"
+        app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
@@ -103,7 +104,7 @@
         app:layout_constraintTop_toBottomOf="@+id/editText2" />
 
     <android.support.constraint.Guideline
-        android:id="@+id/80%"
+        android:id="@+id/whatIsThis"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -111,7 +112,7 @@
         app:layout_constraintGuide_percent="0.84" />
 
     <android.support.constraint.Guideline
-        android:id="@+id/50%"
+        android:id="@+id/whatIsThis2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
