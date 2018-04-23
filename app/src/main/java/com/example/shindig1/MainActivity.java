@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         //Example: HttpCOP.postData("Example.php", "param1="+mEdit.getText().toString());
-                        //or make Java static method to determin if login is good or not
+                        //or make Java static method to determine if login is good or not
                         if(mEdit.getText().toString().equals("admin")){//for testing purposes only
                             startActivity(new Intent(MainActivity.this, Main2Activity.class));
                             System.out.println("admin logged in");
