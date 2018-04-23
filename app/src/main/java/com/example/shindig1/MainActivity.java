@@ -1,14 +1,19 @@
 package com.example.shindig1;
 
+import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -17,21 +22,21 @@ public class MainActivity extends AppCompatActivity {
     Button b1;
     EditText mEdit;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        b1=(Button) findViewById(R.id.button);
-        mEdit = (EditText)findViewById(R.id.emailEditText);
+        b1 = (Button) findViewById(R.id.button);
+        mEdit = (EditText) findViewById(R.id.emailEditText);
         b1.setOnClickListener(
-                new View.OnClickListener()
-                {
+                new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         //Example: HttpCOP.postData("Example.php", "param1="+mEdit.getText().toString());
                         //or make Java static method to determine if login is good or not
-                        if(mEdit.getText().toString().equals("admin")){//for testing purposes only
+                        if (mEdit.getText().toString().equals("admin")) {//for testing purposes only
                             startActivity(new Intent(MainActivity.this, Main2Activity.class));
                             System.out.println("admin logged in");
                         }
@@ -39,8 +44,19 @@ public class MainActivity extends AppCompatActivity {
                 });
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-         getSupportActionBar().hide();
+        getSupportActionBar().hide();
+
+        }
+
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent ev) {
+        if (getCurrentFocus() != null) {
+            InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
+        }
+        return super.dispatchTouchEvent(ev);
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -48,6 +64,7 @@ public class MainActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -63,4 +80,6 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
-}
+
+        }
+
