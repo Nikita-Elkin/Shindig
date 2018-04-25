@@ -6,10 +6,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:layout_editor_absoluteY="25dp"
     android:clickable="true"
     android:focusable="true"
-    android:focusableInTouchMode="true">
+    android:focusableInTouchMode="true"
+    tools:layout_editor_absoluteY="25dp">
 
 
     <ImageView
@@ -17,7 +17,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:alpha=".6"
-        android:paddingRight="300dp"
+        android:foreground="@color/light_orange"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -31,6 +31,7 @@
         android:id="@+id/shindigLogo"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginTop="8dp"
         android:paddingEnd="20dp"
         android:paddingLeft="0dp"
         android:paddingRight="20dp"
@@ -45,7 +46,7 @@
     <EditText
         android:id="@+id/emailEditText"
         style="@style/Widget.AppCompat.EditText"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
@@ -59,15 +60,15 @@
         android:paddingBottom="13dp"
         android:textColorHint="@color/grey_hint"
         app:layout_constraintBottom_toTopOf="@+id/passwordEditText"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/rightGuide"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toStartOf="@+id/leftGuide"
         app:layout_constraintTop_toBottomOf="@+id/shindigLogo"
         app:layout_constraintVertical_chainStyle="spread_inside" />
 
     <EditText
         android:id="@+id/passwordEditText"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
@@ -80,30 +81,31 @@
         android:paddingBottom="13dp"
         android:textColorHint="@color/grey_hint"
         app:layout_constraintBottom_toTopOf="@+id/bottomGuide"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/rightGuide"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/leftGuide"
         app:layout_constraintTop_toBottomOf="@+id/emailEditText" />
 
     <Button
         android:id="@+id/button"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="64dp"
         android:background="@color/orange"
-        app:fontFamily="sans-serif"
         android:text="@string/login_submit"
         android:textColor="@color/white"
-        android:textSize="17sp"
+        android:textSize="16sp"
+        app:fontFamily="sans-serif"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/bottomGuide" />
+        app:layout_constraintEnd_toStartOf="@+id/rightGuide"
+        app:layout_constraintStart_toStartOf="@+id/leftGuide"
+        app:layout_constraintTop_toTopOf="@+id/bottomGuide"
+        />
 
     <android.support.constraint.Guideline
         android:id="@+id/bottomGuide"
@@ -120,6 +122,21 @@
         android:orientation="horizontal"
         android:visibility="visible"
         app:layout_constraintGuide_percent="0.52" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/leftGuide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="visible"
+        app:layout_constraintGuide_percent="0.20" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/rightGuide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.8" />
 
 
 </android.support.constraint.ConstraintLayout>
