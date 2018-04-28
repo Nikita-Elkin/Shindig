@@ -31,4 +31,5 @@
     <string name="deny_button">Deny current candidate button</string>
     <string name="title_activity_home">Home</string>
     <string name="RandNum">0</string>
+    <string name="chat">Chat</string>
 </resources>

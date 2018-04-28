@@ -67,7 +67,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageCardSplit"
+        app:layout_constraintBottom_toTopOf="@+id/bottomSplit"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -89,7 +89,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/leftCardImage"
-        app:layout_constraintTop_toTopOf="@+id/imageCardSplit"
+        app:layout_constraintTop_toTopOf="@+id/bottomSplit"
         app:srcCompat="@drawable/card"
         android:contentDescription="@string/right_card"/>
 
@@ -107,7 +107,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintHorizontal_chainStyle="spread_inside"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageCardSplit"
+        app:layout_constraintTop_toTopOf="@+id/bottomSplit"
         app:srcCompat="@drawable/card"
         android:contentDescription="@string/left_card"/>
 
@@ -123,7 +123,7 @@
         app:layout_constraintBottom_toTopOf="@+id/buttonCardSplit"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageCardSplit"
+        app:layout_constraintTop_toTopOf="@+id/bottomSplit"
         app:srcCompat="@drawable/card"
         android:contentDescription="@string/middle_card"/>
 
@@ -171,7 +171,7 @@
         android:contentDescription="@string/deny_button"/>
 
     <android.support.constraint.Guideline
-        android:id="@+id/imageCardSplit"
+        android:id="@+id/bottomSplit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"

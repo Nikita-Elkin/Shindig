@@ -109,7 +109,7 @@
         app:layout_constraintStart_toEndOf="@+id/total_connections" />
 
     <android.support.constraint.Guideline
-        android:id="@+id/imageCardSplit"
+        android:id="@+id/bottomSplit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
