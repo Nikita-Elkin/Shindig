@@ -14,6 +14,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="8dp"
+        android:contentDescription="@string/settings_button"
         android:scaleType="fitCenter"
         android:src="@drawable/settings_icon"
         app:layout_constraintBottom_toTopOf="@+id/topBar"
@@ -23,14 +24,14 @@
         app:layout_constraintStart_toEndOf="@+id/shindigImage"
         app:layout_constraintStart_toStartOf="@+id/shindigRight"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        android:contentDescription="@string/settings_button"/>
+        app:layout_constraintVertical_bias="1.0" />
 
     <ImageButton
         android:id="@+id/homeButton"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="8dp"
+        android:contentDescription="@string/home_button"
         android:scaleType="fitCenter"
         android:src="@drawable/home_icon"
         app:layout_constraintBottom_toTopOf="@+id/topBar"
@@ -38,8 +39,7 @@
         app:layout_constraintEnd_toStartOf="@+id/shindigLeft"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:contentDescription="@string/home_button"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/shindigImage"
@@ -51,6 +51,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:contentDescription="@string/shindig_logo"
         app:layout_constraintBottom_toTopOf="@+id/topBar"
         app:layout_constraintDimensionRatio="5:1"
         app:layout_constraintEnd_toStartOf="@+id/shindigRight"
@@ -59,48 +60,48 @@
         app:layout_constraintStart_toStartOf="@+id/shindigLeft"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/shindig"
-        android:contentDescription="@string/shindig_logo"/>
+        app:srcCompat="@drawable/shindig" />
 
     <ImageView
         android:id="@+id/imageHolderImage"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="8dp"
+        android:contentDescription="@string/candidate_image"
         app:layout_constraintBottom_toTopOf="@+id/bottomSplit"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/topBar"
-        app:srcCompat="@drawable/picture_holder"
-        android:contentDescription="@string/candidate_image"/>
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/picture_holder" />
 
     <ImageView
         android:id="@+id/rightCardImage"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
         android:layout_marginTop="8dp"
+        android:contentDescription="@string/right_card"
         app:layout_constraintBottom_toTopOf="@+id/buttonCardSplit"
         app:layout_constraintDimensionRatio="h,1.3:1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/leftCardImage"
         app:layout_constraintTop_toTopOf="@+id/bottomSplit"
-        app:srcCompat="@drawable/card"
-        android:contentDescription="@string/right_card"/>
+        app:srcCompat="@drawable/card" />
 
     <ImageView
         android:id="@+id/leftCardImage"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginBottom="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="8dp"
+        android:contentDescription="@string/left_card"
         app:layout_constraintBottom_toTopOf="@+id/buttonCardSplit"
         app:layout_constraintDimensionRatio="h,1.3:1"
         app:layout_constraintEnd_toStartOf="@+id/rightCardImage"
@@ -108,24 +109,24 @@
         app:layout_constraintHorizontal_chainStyle="spread_inside"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/bottomSplit"
-        app:srcCompat="@drawable/card"
-        android:contentDescription="@string/left_card"/>
+        app:srcCompat="@drawable/card" />
 
     <ImageView
         android:id="@+id/middleCardImage"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
+        android:contentDescription="@string/middle_card"
         app:layout_constraintBottom_toTopOf="@+id/buttonCardSplit"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/bottomSplit"
-        app:srcCompat="@drawable/card"
-        android:contentDescription="@string/middle_card"/>
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/card" />
 
     <Button
         android:id="@+id/letsLunchBtn"
@@ -135,9 +136,12 @@
         android:layout_marginEnd="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
+        android:autoSizeTextType="uniform"
+        android:padding="8dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:background="@drawable/lets_lunch_button_border"
+        android:contentDescription="@string/confirm_button"
         android:text="@string/confirm"
         android:textColor="@color/orange"
         android:textSize="18sp"
@@ -146,8 +150,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/maybeLaterBtn"
-        app:layout_constraintTop_toTopOf="@+id/buttonCardSplit"
-        android:contentDescription="@string/confirm_button"/>
+        app:layout_constraintTop_toTopOf="@+id/buttonCardSplit" />
 
     <Button
         android:id="@+id/maybeLaterBtn"
@@ -155,11 +158,14 @@
         android:layout_height="0dp"
         android:layout_marginBottom="16dp"
         android:layout_marginEnd="16dp"
+        android:autoSizeTextType="uniform"
+        android:padding="8dp"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:background="@drawable/maybe_later_button_border"
+        android:contentDescription="@string/deny_button"
         android:text="@string/deny"
         android:textColor="@color/blue"
         android:textSize="18sp"
@@ -167,8 +173,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/letsLunchBtn"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/buttonCardSplit"
-        android:contentDescription="@string/deny_button"/>
+        app:layout_constraintTop_toTopOf="@+id/buttonCardSplit" />
 
     <android.support.constraint.Guideline
         android:id="@+id/bottomSplit"
@@ -176,7 +181,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:visibility="visible"
-        app:layout_constraintGuide_percent="0.53" />
+        app:layout_constraintGuide_percent="0.58" />
 
     <android.support.constraint.Guideline
         android:id="@+id/topBar"
@@ -192,7 +197,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:visibility="visible"
-        app:layout_constraintGuide_percent=".85" />
+        app:layout_constraintGuide_percent="0.86" />
 
     <android.support.constraint.Guideline
         android:id="@+id/shindigLeft"
@@ -207,5 +212,106 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent=".8" />
+
+    <ImageView
+        android:id="@+id/nikitaImageView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="2dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottomSplit"
+        app:layout_constraintEnd_toEndOf="@+id/imageHolderImage"
+        app:layout_constraintStart_toStartOf="@+id/imageHolderImage"
+        app:layout_constraintTop_toTopOf="@+id/imageHolderImage"
+        app:srcCompat="@drawable/bigboy" />
+
+    <TextView
+        android:id="@+id/candidateNameTextView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:autoSizeTextType="uniform"
+        android:gravity="center"
+        android:text="Nikita Elkin"
+        android:textColor="@color/orange"
+        android:textSize="24sp"
+        app:fontFamily="sans-serif-condensed"
+        app:layout_constraintBottom_toTopOf="@+id/candidateNameGuide"
+        app:layout_constraintEnd_toStartOf="@+id/shindigRight"
+        app:layout_constraintStart_toStartOf="@+id/shindigLeft"
+        app:layout_constraintTop_toTopOf="@+id/nameGuide" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/candidateNameGuide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:visibility="visible"
+        app:layout_constraintGuide_percent="0.72" />
+
+    <TextView
+        android:id="@+id/candidatePostitionTextView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:autoSizeTextType="uniform"
+        android:gravity="center"
+        android:text="Shindig CEO"
+        android:textColor="@color/blue"
+        app:fontFamily="sans-serif-condensed"
+        app:layout_constraintBottom_toTopOf="@+id/candidatePositionBottom"
+        app:layout_constraintEnd_toStartOf="@+id/shindigRight"
+        app:layout_constraintStart_toStartOf="@+id/shindigLeft"
+        app:layout_constraintTop_toTopOf="@+id/candidateNameGuide" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/candidatePositionBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.77" />
+
+    <TextView
+        android:id="@+id/youBothLikeTextView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:autoSizeTextType="uniform"
+        android:gravity="center"
+        android:text="You both like: \nShindig, Golf, Leadership"
+        android:textColor="@color/grey_hint"
+        app:layout_constraintBottom_toTopOf="@+id/buttonCardSplit"
+        app:layout_constraintEnd_toStartOf="@+id/shindigRight"
+        app:layout_constraintStart_toStartOf="@+id/shindigLeft"
+        app:layout_constraintTop_toTopOf="@+id/candidatePositionBottom"
+        app:layout_constraintVertical_bias="0.459" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/nameGuide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".62" />
+
+    <TextView
+        android:id="@+id/candidateNumTextView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:autoSizeTextType="uniform"
+        android:gravity="center"
+        android:text="Candidate 1 of 5"
+        android:textColor="@android:color/tertiary_text_light"
+        app:layout_constraintBottom_toTopOf="@+id/candidateNameTextView"
+        app:layout_constraintEnd_toStartOf="@+id/shindigRight"
+        app:layout_constraintStart_toStartOf="@+id/shindigLeft"
+        app:layout_constraintTop_toBottomOf="@+id/nikitaImageView" />
 
 </android.support.constraint.ConstraintLayout>
