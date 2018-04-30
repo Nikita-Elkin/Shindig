@@ -14,6 +14,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="8dp"
+        android:contentDescription="@string/settings_button"
         android:scaleType="fitCenter"
         android:src="@drawable/settings_icon"
         app:layout_constraintBottom_toTopOf="@+id/topBar"
@@ -23,14 +24,14 @@
         app:layout_constraintStart_toEndOf="@+id/shindigImage"
         app:layout_constraintStart_toStartOf="@+id/shindigRight"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        android:contentDescription="@string/settings_button"/>
+        app:layout_constraintVertical_bias="1.0" />
 
     <ImageButton
         android:id="@+id/homeButton"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="8dp"
+        android:contentDescription="@string/home_button"
         android:scaleType="fitCenter"
         android:src="@drawable/home_icon"
         app:layout_constraintBottom_toTopOf="@+id/topBar"
@@ -38,8 +39,7 @@
         app:layout_constraintEnd_toStartOf="@+id/shindigLeft"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:contentDescription="@string/home_button"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/shindigImage"
@@ -51,6 +51,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:contentDescription="@string/shindig_logo"
         app:layout_constraintBottom_toTopOf="@+id/topBar"
         app:layout_constraintDimensionRatio="5:1"
         app:layout_constraintEnd_toStartOf="@+id/shindigRight"
@@ -59,28 +60,53 @@
         app:layout_constraintStart_toStartOf="@+id/shindigLeft"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/shindig"
-        android:contentDescription="@string/shindig_logo"/>
+        app:srcCompat="@drawable/shindig" />
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="664dp"
+        android:id="@+id/join_event"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="40dp"
+        android:scaleType="centerCrop"
         app:layout_constraintDimensionRatio="h,1:1"
+        app:layout_constraintEnd_toStartOf="@+id/imageSplit"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/events_circle"
-        tools:layout_editor_absoluteY="236dp" />
+        app:layout_constraintTop_toBottomOf="@+id/total_connections"
+        app:srcCompat="@drawable/events_circle" />
+
+    <ImageView
+        android:id="@+id/start_shindig"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="40dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintDimensionRatio="h,1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/imageSplit"
+        app:layout_constraintTop_toBottomOf="@+id/total_connections"
+        app:srcCompat="@drawable/shindig_circle" />
 
     <TextView
         android:id="@+id/events_attended"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:gravity="center"
         android:text="@string/events"
         android:textSize="20sp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/total_connections"
         app:layout_constraintEnd_toStartOf="@+id/total_connections"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/total_connections" />
 
     <TextView
         android:id="@+id/total_connections"
@@ -90,12 +116,13 @@
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:gravity="center"
         android:text="@string/total"
         android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="205dp" />
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
     <TextView
         android:id="@+id/shindigs_started"
@@ -104,7 +131,7 @@
         android:gravity="center"
         android:text="@string/shindigs"
         android:textSize="20sp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/total_connections"
+        app:layout_constraintBaseline_toBaselineOf="@+id/events_attended"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/total_connections" />
 
@@ -115,6 +142,14 @@
         android:orientation="horizontal"
         android:visibility="visible"
         app:layout_constraintGuide_percent="0.53" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/imageSplit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="visible"
+        app:layout_constraintGuide_percent="0.5" />
 
     <android.support.constraint.Guideline
         android:id="@+id/topBar"
@@ -137,12 +172,92 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent=".20" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/join_event"
+        app:layout_constraintGuide_begin="72dp" />
 
     <android.support.constraint.Guideline
         android:id="@+id/shindigRight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="72dp"
+        android:layout_marginRight="72dp"
         android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintGuide_percent=".8" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:text="@string/ten"
+        android:textSize="35sp"
+        app:layout_constraintBottom_toTopOf="@+id/events_attended"
+        app:layout_constraintEnd_toStartOf="@+id/total_connections"
+        app:layout_constraintHorizontal_bias="0.192"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView5"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/hundred"
+        android:textSize="40sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/topBar" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:gravity="center"
+        android:text="@string/RandNum"
+        android:textSize="35sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textView4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/shindigs_started" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="19dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:text="TextView"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textView8"
+        app:layout_constraintEnd_toEndOf="@+id/join_event"
+        app:layout_constraintStart_toStartOf="@+id/join_event" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="@+id/start_shindig"
+        app:layout_constraintStart_toStartOf="@+id/start_shindig"
+        app:layout_constraintTop_toBottomOf="@+id/start_shindig" />
+
+
 </android.support.constraint.ConstraintLayout>

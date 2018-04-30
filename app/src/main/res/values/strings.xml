@@ -30,7 +30,9 @@
     <string name="confirm_button">Confirm current candidate button</string>
     <string name="deny_button">Deny current candidate button</string>
     <string name="title_activity_home">Home</string>
-    <string name="RandNum">0</string>
+    <string name="RandNum">42</string>
     <string name="chat">Chat</string>
     <string name="info_button">Full info button</string>
+    <string name="ten">10</string>
+    <string name="hundred">125</string>
 </resources>
