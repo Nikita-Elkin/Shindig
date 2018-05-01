@@ -2,43 +2,234 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/shindig"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
-    tools:context=".Matching"
-    tools:layout_editor_absoluteY="25dp">
+    tools:context=".matched">
 
+    <ImageButton
+        android:id="@+id/settingsButton"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:contentDescription="@string/settings_button"
+        android:scaleType="fitCenter"
+        android:src="@drawable/settings_icon"
+        app:layout_constraintBottom_toTopOf="@+id/topBar"
+        app:layout_constraintDimensionRatio="w,1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/shindigImage"
+        app:layout_constraintStart_toStartOf="@+id/shindigRight"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <ImageButton
+        android:id="@+id/homeButton"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:contentDescription="@string/home_button"
+        android:scaleType="fitCenter"
+        android:src="@drawable/home_icon"
+        app:layout_constraintBottom_toTopOf="@+id/topBar"
+        app:layout_constraintDimensionRatio="w,1:1"
+        app:layout_constraintEnd_toStartOf="@+id/shindigLeft"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/shindigImage"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:contentDescription="@string/shindig_logo"
+        app:layout_constraintBottom_toTopOf="@+id/topBar"
+        app:layout_constraintDimensionRatio="5:1"
+        app:layout_constraintEnd_toStartOf="@+id/shindigRight"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/homeButton"
+        app:layout_constraintStart_toStartOf="@+id/shindigLeft"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/shindig" />
+
+    <ImageView
+        android:id="@+id/orangeGradientImageView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="3dp"
+        android:layout_marginEnd="3dp"
+        android:layout_marginLeft="3dp"
+        android:layout_marginRight="3dp"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="3dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottomSplit"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="@+id/imageHolderImage"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/imageHolderImage"
+        app:layout_constraintTop_toTopOf="@+id/imageHolderImage"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/orange_gradient" />
+
+    <Button
+        android:id="@+id/chatButton"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="32dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        android:autoSizeMaxTextSize="50dp"
+        android:autoSizeTextType="uniform"
+        android:background="@color/orange"
+        android:drawable="@drawable/chat_icon"
+        android:drawableLeft="@drawable/chat_icon"
+        android:gravity="center"
+        android:paddingLeft="20dp"
+        android:paddingRight="15dp"
+        android:text="@string/chat"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/shindigRight"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/shindigLeft"
+        app:layout_constraintTop_toTopOf="@+id/bottomSplit"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <ImageView
+        android:id="@+id/imageHolderImage"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:contentDescription="@string/candidate_image"
+        app:layout_constraintBottom_toTopOf="@+id/bottomSplit"
+        app:layout_constraintDimensionRatio="w,1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/topSplit"
+        app:srcCompat="@drawable/picture_holder" />
+
+    <ImageButton
+        android:id="@+id/infoButton"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="@string/info_button"
+        android:scaleType="fitCenter"
+        android:src="@drawable/info_icon"
+        app:layout_constraintBottom_toTopOf="@+id/bottomSplit"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="@+id/imageHolderImage"
+        app:layout_constraintStart_toStartOf="@+id/shindigRight"
+        app:layout_constraintTop_toTopOf="@+id/infoButtonGuideline"
+        app:layout_constraintVertical_bias="0.75" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/topBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:visibility="visible"
+        app:layout_constraintGuide_percent="0.11" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/shindigLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".20" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/shindigRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".8" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/bottomSplit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:visibility="visible"
+        app:layout_constraintGuide_percent="0.76" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/topSplit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:visibility="visible"
+        app:layout_constraintGuide_percent="0.25" />
 
     <TextView
         android:id="@+id/matchTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="@string/RandNum"
-        app:layout_constraintBottom_toTopOf="@+id/matchDescriptionTextView"
+        android:autoSizeTextType="uniform"
+        android:gravity="center"
+        android:text="Congratulations! You've been matched with: Placeholder"
+        android:textColor="@color/orange"
+        android:textSize="24sp"
+        app:fontFamily="sans-serif"
+        app:layout_constraintBottom_toTopOf="@+id/topSplit"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/topBar" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/gradientGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:visibility="visible"
+        app:layout_constraintGuide_percent="0.63" />
 
     <TextView
         android:id="@+id/matchDescriptionTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="@string/RandNum"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:autoSizeTextType="uniform"
+        android:gravity="center"
+        android:text="First Last\nCompany Position"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/bottomSplit"
+        app:layout_constraintEnd_toStartOf="@+id/shindigRight"
+        app:layout_constraintStart_toStartOf="@+id/shindigLeft"
+        app:layout_constraintTop_toTopOf="@+id/gradientGuideline" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/infoButtonGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".7" />
+
+
 </android.support.constraint.ConstraintLayout>
