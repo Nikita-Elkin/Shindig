@@ -4,138 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".matched">
-
-    <ImageButton
-        android:id="@+id/settingsButton"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="8dp"
-        android:contentDescription="@string/settings_button"
-        android:scaleType="fitCenter"
-        android:src="@drawable/settings_icon"
-        app:layout_constraintBottom_toTopOf="@+id/topBar"
-        app:layout_constraintDimensionRatio="w,1:1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/shindigImage"
-        app:layout_constraintStart_toStartOf="@+id/shindigRight"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <ImageButton
-        android:id="@+id/homeButton"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="8dp"
-        android:contentDescription="@string/home_button"
-        android:scaleType="fitCenter"
-        android:src="@drawable/home_icon"
-        app:layout_constraintBottom_toTopOf="@+id/topBar"
-        app:layout_constraintDimensionRatio="w,1:1"
-        app:layout_constraintEnd_toStartOf="@+id/shindigLeft"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/shindigImage"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:contentDescription="@string/shindig_logo"
-        app:layout_constraintBottom_toTopOf="@+id/topBar"
-        app:layout_constraintDimensionRatio="5:1"
-        app:layout_constraintEnd_toStartOf="@+id/shindigRight"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/homeButton"
-        app:layout_constraintStart_toStartOf="@+id/shindigLeft"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/shindig" />
-
-    <ImageView
-        android:id="@+id/orangeGradientImageView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="3dp"
-        android:layout_marginEnd="3dp"
-        android:layout_marginLeft="3dp"
-        android:layout_marginRight="3dp"
-        android:layout_marginStart="3dp"
-        android:layout_marginTop="3dp"
-        app:layout_constraintBottom_toTopOf="@+id/bottomSplit"
-        app:layout_constraintDimensionRatio="1:1"
-        app:layout_constraintEnd_toEndOf="@+id/imageHolderImage"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/imageHolderImage"
-        app:layout_constraintTop_toTopOf="@+id/imageHolderImage"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/orange_gradient" />
-
-    <Button
-        android:id="@+id/chatButton"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="32dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="32dp"
-        android:autoSizeMaxTextSize="50dp"
-        android:autoSizeTextType="uniform"
-        android:background="@color/orange"
-        android:drawable="@drawable/chat_icon"
-        android:drawableLeft="@drawable/chat_icon"
-        android:gravity="center"
-        android:paddingLeft="20dp"
-        android:paddingRight="15dp"
-        android:text="@string/chat"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/shindigRight"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/shindigLeft"
-        app:layout_constraintTop_toTopOf="@+id/bottomSplit"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <ImageView
-        android:id="@+id/imageHolderImage"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="8dp"
-        android:contentDescription="@string/candidate_image"
-        app:layout_constraintBottom_toTopOf="@+id/bottomSplit"
-        app:layout_constraintDimensionRatio="w,1:1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/topSplit"
-        app:srcCompat="@drawable/picture_holder" />
-
-    <ImageButton
-        android:id="@+id/infoButton"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:background="@android:color/transparent"
-        android:contentDescription="@string/info_button"
-        android:scaleType="fitCenter"
-        android:src="@drawable/info_icon"
-        app:layout_constraintBottom_toTopOf="@+id/bottomSplit"
-        app:layout_constraintDimensionRatio="1:1"
-        app:layout_constraintEnd_toEndOf="@+id/imageHolderImage"
-        app:layout_constraintStart_toStartOf="@+id/shindigRight"
-        app:layout_constraintTop_toTopOf="@+id/infoButtonGuideline"
-        app:layout_constraintVertical_bias="0.75" />
+    tools:context=".matched"
+    android:background="@color/light_orange">
 
     <android.support.constraint.Guideline
         android:id="@+id/topBar"
@@ -146,11 +16,19 @@
         app:layout_constraintGuide_percent="0.11" />
 
     <android.support.constraint.Guideline
+        android:id="@+id/chatImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="visible"
+        app:layout_constraintGuide_percent="0.33" />
+
+    <android.support.constraint.Guideline
         android:id="@+id/shindigLeft"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent=".20" />
+        app:layout_constraintGuide_percent="0.16" />
 
     <android.support.constraint.Guideline
         android:id="@+id/shindigRight"
@@ -175,27 +53,6 @@
         android:visibility="visible"
         app:layout_constraintGuide_percent="0.25" />
 
-    <TextView
-        android:id="@+id/matchTextView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:autoSizeTextType="uniform"
-        android:gravity="center"
-        android:text="Congratulations! You've been matched with: Placeholder"
-        android:textColor="@color/orange"
-        android:textSize="24sp"
-        app:fontFamily="sans-serif"
-        app:layout_constraintBottom_toTopOf="@+id/topSplit"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/topBar" />
-
     <android.support.constraint.Guideline
         android:id="@+id/gradientGuideline"
         android:layout_width="wrap_content"
@@ -204,32 +61,96 @@
         android:visibility="visible"
         app:layout_constraintGuide_percent="0.63" />
 
-    <TextView
-        android:id="@+id/matchDescriptionTextView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+    <android.support.constraint.Guideline
+        android:id="@+id/infoButtonGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.7" />
+
+    <ImageView
+        android:id="@+id/shindig_found"
+        android:layout_width="317dp"
+        android:layout_height="93dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.518"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.017"
+        app:srcCompat="@drawable/matched_text" />
+
+    <ImageView
+        android:id="@+id/match_image"
+        android:layout_width="301dp"
+        android:layout_height="359dp"
+        android:scaleType="fitCenter"
+        app:srcCompat="@drawable/big_boy_circle"
+        tools:layout_editor_absoluteX="30dp"
+        tools:layout_editor_absoluteY="62dp" />
+
+    <TextView
+        android:id="@+id/congratulations"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="24dp"
         android:gravity="center"
-        android:text="First Last\nCompany Position"
+        android:text="Nikita And You Both Want To Shindig Together"
         android:textColor="@color/white"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/bottomSplit"
-        app:layout_constraintEnd_toStartOf="@+id/shindigRight"
-        app:layout_constraintStart_toStartOf="@+id/shindigLeft"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/gradientGuideline" />
 
-    <android.support.constraint.Guideline
-        android:id="@+id/infoButtonGuideline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent=".7" />
+    <Button
+        android:id="@+id/chat_button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="32dp"
+        android:layout_marginEnd="56dp"
+        android:layout_marginLeft="56dp"
+        android:layout_marginRight="56dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/chat_button"
+        android:paddingLeft="25dp"
+        android:text="Start Chatting"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/congratulations" />
+
+    <ImageView
+        android:id="@+id/chat_image"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="24dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/chatImage"
+        app:layout_constraintHorizontal_bias="0.06"
+        app:layout_constraintStart_toStartOf="@+id/congratulations"
+        app:layout_constraintTop_toBottomOf="@+id/congratulations"
+        app:layout_constraintVertical_bias="0.9"
+        app:srcCompat="@drawable/chat" />
 
 
 </android.support.constraint.ConstraintLayout>

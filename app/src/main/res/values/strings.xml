@@ -17,6 +17,7 @@
     <string name="events">Events \nAttended</string>
     <string name="shindigs">Shindigs \nStarted</string>
     <string name="title_activity_main2">Main2Activity</string>
+    <string name="title_Shindig_Session">ShindigSession</string>
     <string name="confirm">Let\'s Lunch!</string>
     <string name="deny">Maybe Later</string>
     <string name="middle_card">Middle business card</string>

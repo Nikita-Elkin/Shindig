@@ -14,14 +14,12 @@ public class matched extends AppCompatActivity {
         String match_name = "Match Name";
         String matched_text = matched_intro + " " + match_name;
 
-        TextView matchedTextView = findViewById(R.id.matchTextView);
+        TextView matchedTextView = findViewById(R.id.congratulations);
         matchedTextView.setText(matched_text);
 
         String match_position = "Match Position";
         String matched_description = match_name + "\n" + match_position;
 
-        TextView matchDescriptionTextView = findViewById(R.id.matchDescriptionTextView);
-        matchDescriptionTextView.setText(matched_description);
     }
 
     // Lucien needs to make a method to change the match_name string to the actual name of the
