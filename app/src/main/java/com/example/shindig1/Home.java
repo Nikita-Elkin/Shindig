@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
+
 public class Home extends AppCompatActivity {
 
     @Override
@@ -24,6 +25,6 @@ public class Home extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
-    }
 
-}
+        }
+    }

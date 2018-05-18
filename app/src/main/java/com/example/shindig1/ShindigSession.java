@@ -4,11 +4,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.widget.NumberPicker;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 
 public class ShindigSession extends AppCompatActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,6 +22,16 @@ public class ShindigSession extends AppCompatActivity {
         np.setMaxValue(20);
 
         np.setOnValueChangedListener(onValueChangeListener);
+
+        RadioGroup radioGroup;
+
+
+        radioGroup = (RadioGroup) findViewById(R.id.radioGroup);
+
+        if (radioGroup.getCheckedRadioButtonId() == R.id.radioButton4|radioGroup.getCheckedRadioButtonId() == R.id.radioButton3|radioGroup.getCheckedRadioButtonId() == R.id.radioButton5 & np.getValue()!=0)
+        {
+            
+        }
 
     }
 
