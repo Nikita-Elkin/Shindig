@@ -7,7 +7,8 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     tools:context=".Matching"
-    tools:layout_editor_absoluteY="25dp">
+    tools:layout_editor_absoluteY="25dp"
+    >
 
     <ImageView
         android:id="@+id/nikitaImageView"
@@ -78,57 +79,27 @@
         app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/shindig" />
 
-    <ImageView
-        android:id="@+id/rightCardImage"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="8dp"
-        android:contentDescription="@string/right_card"
-        app:layout_constraintBottom_toTopOf="@+id/buttonCardSplit"
-        app:layout_constraintDimensionRatio="h,1.4:1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/leftCardImage"
-        app:layout_constraintTop_toTopOf="@+id/bottomSplit"
-        app:srcCompat="@drawable/card" />
+<RelativeLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    tools:context="edmt.dev.carouselpickerdemo.Matching"
+    >
+    <com.gigamole.infinitecycleviewpager.HorizontalInfiniteCycleViewPager
+        android:id="@+id/horizontal_cycle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="270dp"
+        app:icvp_interpolator="@android:anim/accelerate_decelerate_interpolator"
+        app:icvp_scroll_duration="175"
+        app:icvp_center_page_scale_offset="30dp"
+        app:icvp_min_page_scale_offset="5dp"
+        app:icvp_max_page_scale="0.75"
+        app:icvp_min_page_scale="0.55"
+        app:icvp_medium_scaled="false"
 
-    <ImageView
-        android:id="@+id/leftCardImage"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:contentDescription="@string/left_card"
-        app:layout_constraintBottom_toTopOf="@+id/buttonCardSplit"
-        app:layout_constraintDimensionRatio="h,1.4:1"
-        app:layout_constraintEnd_toStartOf="@+id/rightCardImage"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintHorizontal_chainStyle="spread_inside"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/bottomSplit"
-        app:srcCompat="@drawable/card" />
+        />
 
-    <ImageView
-        android:id="@+id/middleCardImage"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginEnd="0dp"
-        android:layout_marginLeft="0dp"
-        android:layout_marginRight="0dp"
-        android:layout_marginStart="0dp"
-        android:contentDescription="@string/middle_card"
-        app:layout_constraintBottom_toTopOf="@+id/buttonCardSplit"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/bottomSplit"
-        app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/card" />
+</RelativeLayout>
 
     <Button
         android:id="@+id/letsLunchBtn"
@@ -301,5 +272,11 @@
         app:layout_constraintEnd_toStartOf="@+id/shindigRight"
         app:layout_constraintStart_toStartOf="@+id/shindigLeft"
         app:layout_constraintTop_toTopOf="@+id/bottomSplit" />
+
+    <android.support.v4.view.ViewPager
+        android:layout_width="24dp"
+        android:layout_height="17dp"
+        tools:layout_editor_absoluteX="131dp"
+        tools:layout_editor_absoluteY="420dp" />
 
 </android.support.constraint.ConstraintLayout>
