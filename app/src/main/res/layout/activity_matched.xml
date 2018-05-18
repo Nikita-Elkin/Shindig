@@ -90,10 +90,18 @@
         android:id="@+id/match_image"
         android:layout_width="301dp"
         android:layout_height="359dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:scaleType="fitCenter"
-        app:srcCompat="@drawable/big_boy_circle"
-        tools:layout_editor_absoluteX="30dp"
-        tools:layout_editor_absoluteY="62dp" />
+        app:layout_constraintBottom_toTopOf="@+id/chat_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/shindig_found"
+        app:srcCompat="@drawable/big_boy_circle" />
 
     <TextView
         android:id="@+id/congratulations"
