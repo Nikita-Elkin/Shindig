@@ -37,7 +37,11 @@ public class Main2Activity extends AppCompatActivity {
                 startActivity(new Intent(Main2Activity.this, ShindigSession.class));
             }
         });
+
+
     }
+    @Override
+    public void onBackPressed() { }
 }
 
 
