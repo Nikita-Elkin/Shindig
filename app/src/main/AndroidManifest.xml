@@ -22,8 +22,7 @@
         <activity
             android:name=".ShindigSession"
             android:label="@string/title_Shindig_Session"
-            android:theme="@style/AppTheme.NoActionBar.">
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar."></activity>
         <activity android:name=".Matching" />
         <activity
             android:name=".Main2Activity"
@@ -35,7 +34,8 @@
             android:theme="@style/AppTheme.NoActionBar." />
         <activity
             android:name=".matched"
-            android:exported="true"/>
+            android:exported="true" />
+        <activity android:name=".Profile_view"></activity>
     </application>
 
 </manifest>
