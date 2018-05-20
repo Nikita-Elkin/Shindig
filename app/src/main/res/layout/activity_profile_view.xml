@@ -207,13 +207,14 @@
         app:layout_constraintTop_toTopOf="@+id/imageHolderImageView"
         app:srcCompat="@drawable/bigboyhex" />
 
-    <ImageView
-        android:id="@+id/imageView6"
+    <ImageButton
+        android:id="@+id/backImageButton"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginLeft="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:background="@drawable/back"
         app:layout_constraintBottom_toTopOf="@+id/topBar"
         app:layout_constraintEnd_toStartOf="@+id/shindigLeft"
         app:layout_constraintStart_toStartOf="parent"
