@@ -18,7 +18,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:gravity="left"
-        android:text="Position:\n\n\nSpecialites:\n\n\nHobbies:\n\n\nPrevious Work:\n\n"
+        android:text="\nPosition:\n\n\nSpecialites:\n\n\nHobbies:\n\n\nPrevious Work:\n\n"
         android:textColor="@color/black"
         android:textSize="18sp"
         android:typeface="normal"
@@ -79,7 +79,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:visibility="visible"
-        app:layout_constraintGuide_percent="0.63" />
+        app:layout_constraintGuide_percent="0.69" />
 
     <android.support.constraint.Guideline
         android:id="@+id/hobbiesBottom"
@@ -87,7 +87,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:visibility="visible"
-        app:layout_constraintGuide_percent="0.83" />
+        app:layout_constraintGuide_percent="0.87" />
 
     <android.support.constraint.Guideline
         android:id="@+id/prevWorkBottom"
@@ -95,7 +95,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:visibility="visible"
-        app:layout_constraintGuide_percent="0.92" />
+        app:layout_constraintGuide_percent="0.96" />
 
     <android.support.constraint.Guideline
         android:id="@+id/specialitesBottom"
@@ -103,7 +103,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:visibility="visible"
-        app:layout_constraintGuide_percent="0.74" />
+        app:layout_constraintGuide_percent="0.79" />
 
     <android.support.constraint.Guideline
         android:id="@+id/shindigLeft"
@@ -224,12 +224,14 @@
         android:id="@+id/positionEditText"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginTop="8dp"
         android:ems="10"
         android:inputType="textMultiLine"
         android:singleLine="false"
+        android:text="Shindig Chief Executive Officer"
         app:layout_constraintBottom_toTopOf="@+id/positionBottom"
         app:layout_constraintEnd_toStartOf="@+id/shindigRight"
         app:layout_constraintStart_toStartOf="@+id/positionHobbiesLeft"
@@ -241,10 +243,10 @@
         android:layout_height="0dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginTop="8dp"
         android:ems="10"
         android:inputType="textMultiLine"
         android:singleLine="false"
+        android:text="Golf, Swimming, Volleyball"
         app:layout_constraintBottom_toTopOf="@+id/hobbiesBottom"
         app:layout_constraintEnd_toStartOf="@+id/shindigRight"
         app:layout_constraintHorizontal_bias="0.0"
@@ -260,8 +262,9 @@
         android:layout_marginRight="8dp"
         android:layout_marginTop="8dp"
         android:ems="10"
-        android:inputType="textMultiLine"
+        android:inputType="text"
         android:singleLine="false"
+        android:text="Thomas Reuters"
         app:layout_constraintBottom_toTopOf="@+id/prevWorkBottom"
         app:layout_constraintEnd_toStartOf="@+id/shindigRight"
         app:layout_constraintHorizontal_bias="0.0"
@@ -279,6 +282,7 @@
         android:ems="10"
         android:inputType="textMultiLine"
         android:singleLine="false"
+        android:text="Leadership, Marketing"
         app:layout_constraintBottom_toTopOf="@+id/specialitesBottom"
         app:layout_constraintEnd_toStartOf="@+id/shindigRight"
         app:layout_constraintHorizontal_bias="0.0"
