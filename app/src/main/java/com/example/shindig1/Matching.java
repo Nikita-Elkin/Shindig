@@ -1,5 +1,6 @@
 package com.example.shindig1;
 
+import android.app.usage.UsageEvents;
 import android.content.Intent;
 import android.media.Image;
 import android.support.v7.app.AppCompatActivity;
@@ -19,6 +20,12 @@ public class Matching extends AppCompatActivity {
 
     List<Integer> lstImages= new ArrayList<>();
 
+
+    private View.OnDragListener changepic = new View.OnDragListener(View,) {
+        public void onClick(View v) {
+            // do something when the button is clicked
+        }
+    };
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +40,8 @@ public class Matching extends AppCompatActivity {
 
         pager.setAdapter(adapter);
 
+
+        pager.setOnDragListener(new View.OnDragListener() );
 
 
     }
