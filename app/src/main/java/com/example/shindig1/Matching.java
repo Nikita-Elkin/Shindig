@@ -10,46 +10,80 @@ import android.widget.Button;
 import android.widget.ImageButton;
 
 import com.gigamole.infinitecycleviewpager.HorizontalInfiniteCycleViewPager;
+import com.gigamole.infinitecycleviewpager.OnInfiniteCyclePageTransformListener;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import eu.davidea.flipview.FlipView;
 
 
 public class Matching extends AppCompatActivity {
 
-    List<Integer> lstImages= new ArrayList<>();
+    List<Integer> lstCards= new ArrayList<>();
+    List<Integer> lstMatches=new ArrayList<>();
+    List <Integer> lstLunchOptions= new ArrayList<>();
+
+    Button letsLunch;
 
 
-    private View.OnDragListener changepic = new View.OnDragListener(View,) {
-        public void onClick(View v) {
-            // do something when the button is clicked
-        }
-    };
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_matching);
 
 
-        initData();
+        initCards();
+        initMatches();
 
-        HorizontalInfiniteCycleViewPager pager=(HorizontalInfiniteCycleViewPager)findViewById(R.id.horizontal_cycle);
+        letsLunch=(Button) findViewById(R.id.letsLunchBtn);
 
-        MyAdapter adapter= new MyAdapter(lstImages,getBaseContext());
+
+        final FlipView flipView = (FlipView) findViewById(R.id.matchFlipView);
+
+        flipView.setFrontImage(R.drawable.bigboy);
+        flipView.setRearImage(R.drawable.match_pro_card);
+
+        final HorizontalInfiniteCycleViewPager pager=(HorizontalInfiniteCycleViewPager)findViewById(R.id.horizontal_cycle);
+
+        MyAdapter adapter= new MyAdapter(lstCards,getBaseContext());
 
         pager.setAdapter(adapter);
 
 
-        pager.setOnDragListener(new View.OnDragListener() );
+        pager.setOnInfiniteCyclePageTransformListener(new OnInfiniteCyclePageTransformListener() {
+            @Override
+            public void onPreTransform(View page, float position) {
+                flipView.setFrontImage(lstMatches.get(pager.getRealItem()));
+                flipView.setRearImage(lstMatches.get(pager.getRealItem()+1));
+            }
+
+            @Override
+            public void onPostTransform(View page, float position) {
+
+            }
+        });
+
+
+
+
 
 
     }
 
-    private void initData(){
-        lstImages.add(R.drawable.card);
-        lstImages.add(R.drawable.card);
-        lstImages.add(R.drawable.card);
+    private void initCards(){
+        lstCards.add(R.drawable.card);
+        lstCards.add(R.drawable.card);
+        lstCards.add(R.drawable.card);
+    }
+
+    private void initMatches(){
+        lstMatches.add(R.drawable.login_background);
+        lstMatches.add(R.drawable.bigboyhex);
+        lstMatches.add(R.drawable.shindig_circle);
+        lstMatches.add(R.drawable.login_background);
+        lstMatches.add(R.drawable.bigboyhex);
+        lstMatches.add(R.drawable.shindig_circle);
     }
 
 

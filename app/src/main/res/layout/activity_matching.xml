@@ -189,10 +189,11 @@
         android:padding="15dp">
 
 <eu.davidea.flipview.FlipView
+    android:id="@+id/matchFlipView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    app:frontBackground="@drawable/bigboy"
-    app:rearBackground="@drawable/match_pro_card"
+    app:frontBackground="@null"
+    app:rearBackground="@null"
     android:clickable="true"
     android:focusable="true"
     />
