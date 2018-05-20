@@ -86,22 +86,26 @@
         app:layout_constraintVertical_bias="0.017"
         app:srcCompat="@drawable/matched_text" />
 
-    <ImageView
+    <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/match_image"
-        android:layout_width="301dp"
-        android:layout_height="359dp"
-        android:layout_marginBottom="8dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginBottom="32dp"
         android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:scaleType="fitCenter"
-        app:layout_constraintBottom_toTopOf="@+id/chat_button"
+        android:src="@null"
+        app:civ_border_color="@color/colorAccent"
+        app:civ_border_width="3dp"
+        app:layout_constraintBottom_toTopOf="@+id/infoButtonGuideline"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/shindig_found"
-        app:srcCompat="@drawable/big_boy_circle" />
+        app:layout_constraintTop_toBottomOf="@+id/shindig_found" />
+
 
     <TextView
         android:id="@+id/congratulations"
@@ -124,7 +128,7 @@
     <Button
         android:id="@+id/chat_button"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="68dp"
         android:layout_marginBottom="32dp"
         android:layout_marginEnd="56dp"
         android:layout_marginLeft="56dp"
@@ -132,31 +136,35 @@
         android:layout_marginStart="56dp"
         android:layout_marginTop="40dp"
         android:background="@drawable/chat_button"
-        android:paddingLeft="25dp"
+        android:gravity="center"
+        android:paddingLeft="30dp"
         android:text="Start Chatting"
+        android:textAlignment="gravity"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/congratulations" />
+        app:layout_constraintTop_toBottomOf="@+id/congratulations"
+        app:layout_constraintVertical_bias="0.100000024" />
 
     <ImageView
         android:id="@+id/chat_image"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="24dp"
+        android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginLeft="40dp"
         android:layout_marginRight="8dp"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="32dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/chat_button"
         app:layout_constraintEnd_toStartOf="@+id/chatImage"
         app:layout_constraintHorizontal_bias="0.06"
         app:layout_constraintStart_toStartOf="@+id/congratulations"
-        app:layout_constraintTop_toBottomOf="@+id/congratulations"
+        app:layout_constraintTop_toTopOf="@+id/chat_button"
         app:layout_constraintVertical_bias="0.9"
         app:srcCompat="@drawable/chat" />
 
