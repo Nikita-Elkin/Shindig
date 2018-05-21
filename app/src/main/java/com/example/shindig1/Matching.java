@@ -74,7 +74,7 @@ public class Matching extends AppCompatActivity {
                             public void run() {
                                 startActivity(new Intent(Matching.this, matched.class));
                             }
-                        }, 10000);
+                        }, 3000);
                     }
                     numberOfClicks=clicks;
             }

@@ -39,8 +39,8 @@ public class matched extends AppCompatActivity {
     }
 
     private void addListNames(){
-        lstNames.add("Meg");
         lstNames.add("Greg");
+        lstNames.add("Meg");
         lstNames.add("Darrel");
     }
 
