@@ -1,15 +1,10 @@
 package com.example.shindig1;
 
-import android.app.usage.UsageEvents;
 import android.content.Intent;
-import android.graphics.Color;
-import android.media.Image;
-import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageButton;
 
 import com.gigamole.infinitecycleviewpager.HorizontalInfiniteCycleViewPager;
 import com.gigamole.infinitecycleviewpager.OnInfiniteCyclePageTransformListener;
@@ -58,8 +53,8 @@ public class Matching extends AppCompatActivity {
         pager.setOnInfiniteCyclePageTransformListener(new OnInfiniteCyclePageTransformListener() {
             @Override
             public void onPreTransform(View page, float position) {
-                flipView.setFrontImage(lstMatches.get(pager.getRealItem()));
-                flipView.setRearImage(lstMatches.get(pager.getRealItem()+1));
+                flipView.setFrontImage(lstMatches.get(2*(pager.getRealItem())));
+                flipView.setRearImage(lstMatches.get(2*(pager.getRealItem())+1));
             }
 
             @Override
@@ -93,18 +88,18 @@ public class Matching extends AppCompatActivity {
     }
 
     private void initCards(){
-        lstCards.add(R.drawable.card);
-        lstCards.add(R.drawable.card);
-        lstCards.add(R.drawable.card);
+        lstCards.add(R.drawable.business_card1);
+        lstCards.add(R.drawable.business_card2);
+        lstCards.add(R.drawable.business_card3);
     }
 
     private void initMatches(){
-        lstMatches.add(R.drawable.login_background);
-        lstMatches.add(R.drawable.bigboyhex);
-        lstMatches.add(R.drawable.shindig_circle);
-        lstMatches.add(R.drawable.login_background);
-        lstMatches.add(R.drawable.bigboyhex);
-        lstMatches.add(R.drawable.shindig_circle);
+        lstMatches.add(R.drawable.fake_match2);
+        lstMatches.add(R.drawable.description2);
+        lstMatches.add(R.drawable.fake_match1);
+        lstMatches.add(R.drawable.description1);
+        lstMatches.add(R.drawable.fake_match3);
+        lstMatches.add(R.drawable.description3);
     }
 
 

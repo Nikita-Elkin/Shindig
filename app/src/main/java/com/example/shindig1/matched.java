@@ -39,18 +39,18 @@ public class matched extends AppCompatActivity {
     }
 
     private void addListNames(){
-        lstNames.add("Bob");
-        lstNames.add("Phil");
-        lstNames.add("Lewis");
+        lstNames.add("Meg");
+        lstNames.add("Greg");
+        lstNames.add("Darrel");
     }
 
     private void initMatches(){
-        lstMatches.add(R.drawable.login_background);
-        lstMatches.add(R.drawable.bigboyhex);
-        lstMatches.add(R.drawable.shindig_circle);
-        lstMatches.add(R.drawable.login_background);
-        lstMatches.add(R.drawable.bigboyhex);
-        lstMatches.add(R.drawable.shindig_circle);
+        lstMatches.add(R.drawable.fake_match2);
+        lstMatches.add(R.drawable.description1);
+        lstMatches.add(R.drawable.fake_match1);
+        lstMatches.add(R.drawable.description2);
+        lstMatches.add(R.drawable.fake_match3);
+        lstMatches.add(R.drawable.description3);
     }
 
 }

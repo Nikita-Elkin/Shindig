@@ -169,7 +169,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.77" />
+        app:layout_constraintGuide_percent="0.7" />
 
 
     <android.support.constraint.Guideline
@@ -182,21 +182,21 @@
     <RelativeLayout
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintTop_toBottomOf="@+id/topBar"
-        app:layout_constraintBottom_toTopOf="@id/candidatePostitionTextView"
-        app:layout_constraintStart_toStartOf="parent"
+        android:padding="15dp"
         app:layout_constraintEnd_toEndOf="parent"
-        android:padding="15dp">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/topBar"
+        app:layout_constraintBottom_toTopOf="@id/candidatePositionBottom">
 
-<eu.davidea.flipview.FlipView
-    android:id="@+id/matchFlipView"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    app:frontBackground="@null"
-    app:rearBackground="@null"
-    android:clickable="true"
-    android:focusable="true"
-    />
+        <eu.davidea.flipview.FlipView
+            android:id="@+id/matchFlipView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:focusable="true"
+            app:frontBackground="@color/white"
+            app:rearBackground="@color/white"
+            />
     </RelativeLayout>
 
     <RelativeLayout
@@ -225,69 +225,16 @@
     </RelativeLayout>
 
     <TextView
-        android:id="@+id/candidateNameTextView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:gravity="center"
-        android:text="Nikita Elkin"
-        android:textColor="@color/orange"
-        android:textSize="36sp"
-        app:fontFamily="sans-serif-condensed"
-        app:layout_constraintBottom_toTopOf="@+id/candidateNameGuide"
-        app:layout_constraintEnd_toStartOf="@+id/shindigRight"
-        app:layout_constraintStart_toStartOf="@+id/shindigLeft"
-        app:layout_constraintTop_toTopOf="@+id/nameGuide" />
-
-    <TextView
         android:id="@+id/candidateNumTextView"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="8dp"
+        android:layout_alignParentBottom="true"
         android:gravity="center"
         android:text="Candidate 1 of 5"
         android:textColor="@android:color/tertiary_text_light"
-        app:layout_constraintBottom_toTopOf="@+id/candidateNameTextView"
         app:layout_constraintEnd_toStartOf="@+id/shindigRight"
         app:layout_constraintStart_toStartOf="@+id/shindigLeft"
         app:layout_constraintTop_toTopOf="@+id/bottomSplit" />
-
-    <TextView
-        android:id="@+id/youBothLikeTextView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:gravity="center"
-        android:text="You both like: \nShindig, Golf, Leadership"
-        android:textColor="@color/grey_hint"
-        app:layout_constraintBottom_toTopOf="@+id/buttonCardSplit"
-        app:layout_constraintEnd_toStartOf="@+id/shindigRight"
-        app:layout_constraintStart_toStartOf="@+id/shindigLeft"
-        app:layout_constraintTop_toTopOf="@+id/candidatePositionBottom"
-        app:layout_constraintVertical_bias="0.459" />
-
-    <TextView
-        android:id="@+id/candidatePostitionTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="Shindig Founder"
-        android:textColor="@color/blue"
-        android:textSize="22sp"
-        app:fontFamily="sans-serif-condensed"
-        app:layout_constraintBottom_toTopOf="@+id/candidatePositionBottom"
-        app:layout_constraintEnd_toStartOf="@+id/shindigRight"
-        app:layout_constraintStart_toStartOf="@+id/shindigLeft"
-        app:layout_constraintTop_toTopOf="@+id/candidateNameGuide" />
 
 
 </android.support.constraint.ConstraintLayout>
