@@ -70,7 +70,6 @@ public class Matching extends AppCompatActivity implements SwipeMenuDropEvents, 
     @Override
     public void onWindowFocusChanged(boolean hasFocus) {
         super.onWindowFocusChanged(hasFocus);
-        //mPager.setCurrentItem(0);
     }
 
 
@@ -99,12 +98,6 @@ public class Matching extends AppCompatActivity implements SwipeMenuDropEvents, 
         resIds.add(R.drawable.business_card1);
         resIds.add(R.drawable.business_card2);
         resIds.add(R.drawable.business_card3);
-
-        //final VerticalInfiniteCycleViewPager pager=(VerticalInfiniteCycleViewPager)findViewById(R.id.verticle_cycle);
-
-        ///MyAdapter adapter= new MyAdapter(lstCards,getBaseContext());
-
-        //pager.setAdapter(adapter);
 
         mAdapter = new PagerAdapter() {
 

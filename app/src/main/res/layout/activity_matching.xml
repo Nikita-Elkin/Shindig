@@ -220,18 +220,18 @@
         tools:layout_editor_absoluteY="133dp"/>
 
     <View android:id="@+id/drop_zone_left"
-        android:layout_width="60dp"
+        android:layout_width="100dp"
         android:layout_height="match_parent"
         android:layout_alignParentLeft="true"
-        android:background="@android:color/darker_gray"
+        android:background="@null"
         android:alpha="0.5">
     </View>
 
     <View android:id="@+id/drop_zone_right"
-        android:layout_width="60dp"
+        android:layout_width="100dp"
         android:layout_height="match_parent"
         android:layout_alignParentRight="true"
-        android:background="@android:color/darker_gray"
+        android:background="@null"
         android:alpha="0.5">
     </View>
 

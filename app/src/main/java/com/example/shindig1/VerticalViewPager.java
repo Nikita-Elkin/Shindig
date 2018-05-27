@@ -2571,7 +2571,7 @@ public class VerticalViewPager extends ViewGroup {
     public boolean dispatchPopulateAccessibilityEvent(AccessibilityEvent event) {
         // ViewPagers should only report accessibility info for the current page,
         // otherwise things get very confusing.
-        
+
 
         final int childCount = getChildCount();
         for (int i = 0; i < childCount; i++) {
