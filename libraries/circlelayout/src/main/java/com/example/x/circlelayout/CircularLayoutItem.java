@@ -129,7 +129,7 @@ public abstract class CircularLayoutItem extends LinearLayout {
     	this.setOnTouchListener(new OnTouchListener() {
 			@Override
 			public boolean onTouch(View v, MotionEvent event) {
-				
+
 				int action=event.getAction();
 				if(action==MotionEvent.ACTION_DOWN)
                     isPressed=true;

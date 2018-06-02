@@ -55,6 +55,7 @@ public class Matching extends AppCompatActivity implements SwipeMenuDropEvents, 
 
     private GestureDetector mDetector = null;
     private SwipeMenuGestureListener mSwipeGestureListener = null;
+    private SwipeMenuManager mSwipeManager=null;
     private SwipeMenuDragShadow mShadow = null;
     private SwipeMenuDropZones mDropZones = null;
     private SwipeMenuTouchListener mTouchListener = null;
@@ -62,7 +63,8 @@ public class Matching extends AppCompatActivity implements SwipeMenuDropEvents, 
     private VerticalViewPager mPager = null;
     private PagerAdapter mAdapter = null;
 
-    private View mCurrentView = null;
+    private View mCurrentView=null;
+
     
     Button letsLunch;
     Button maybeLater;
@@ -70,6 +72,7 @@ public class Matching extends AppCompatActivity implements SwipeMenuDropEvents, 
     @Override
     public void onWindowFocusChanged(boolean hasFocus) {
         super.onWindowFocusChanged(hasFocus);
+        mPager.setCurrentItem(0);
     }
 
 
@@ -95,9 +98,12 @@ public class Matching extends AppCompatActivity implements SwipeMenuDropEvents, 
         mTouchListener.setDragShadow(mShadow);
 
         ArrayList<Integer> resIds = new ArrayList<Integer>();
-        resIds.add(R.drawable.business_card1);
         resIds.add(R.drawable.business_card2);
         resIds.add(R.drawable.business_card3);
+        resIds.add(R.drawable.business_card3);
+        resIds.add(R.drawable.business_card3);
+        resIds.add(R.drawable.business_card3);
+
 
         mAdapter = new PagerAdapter() {
 
@@ -109,6 +115,7 @@ public class Matching extends AppCompatActivity implements SwipeMenuDropEvents, 
                 ImageView iv = (ImageView) v.findViewById(R.id.vp_page_image);
                 int resId = mResIds.get(position);
                 iv.setImageResource(resId);
+                iv.setVisibility(View.VISIBLE);
                 Log.d(TAG, "----------> set image view with res id: " + resId);
                 float topY = v.getY();
                 v.setTag(position);	// XXX: VERY IMPORTANT!!!!!
@@ -140,13 +147,13 @@ public class Matching extends AppCompatActivity implements SwipeMenuDropEvents, 
         mPager.setAdapter(mAdapter);
         mPager.setPageTransformer(true, new DepthPageTransformer());
         mPager.setOnPageChangeListener(this);
-        mPager.setOnTouchListener(mTouchListener);	// always set ontouch on viewpager, not this child views
+        mPager.setOnTouchListener(mTouchListener);
 
-//		mSwipeManager = new SwipeMenuManager(this, this);
-//		mSwipeManager.setViewPager(mPager);
-//		mSwipeManager.setDropZone(DropZone.Idle, findViewById(R.id.container));
-//		mSwipeManager.
-//		mSwipeManager.
+
+        // always set ontouch on viewpager, not this child views
+
+		mSwipeManager = new SwipeMenuManager(this, null);
+		mSwipeManager.setViewPager(mPager);
     }
 
     @Override
@@ -154,10 +161,10 @@ public class Matching extends AppCompatActivity implements SwipeMenuDropEvents, 
 
     @Override
     public void onPageSelected(int position) {
-        Log.d(TAG, "onPageSelected! -----> " + position);
+        Log.d(TAG, "onPageSelected! -----> ");
         if (position < mAdapter.getCount()) {
             mCurrentView = mPager.getChildAt(position);
-            //mSwipeManager.setCurrentCard(mCurrentView, View.VISIBLE);
+            mSwipeManager.setCurrentCard(mCurrentView, View.VISIBLE);
         }
     }
 

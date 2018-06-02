@@ -217,14 +217,17 @@
         android:layout_centerInParent="true"
         android:clickable="true"
         tools:layout_editor_absoluteX="68dp"
-        tools:layout_editor_absoluteY="133dp"/>
+        tools:layout_editor_absoluteY="133dp"
+        android:background="@color/blue"
+        />
 
     <View android:id="@+id/drop_zone_left"
         android:layout_width="100dp"
         android:layout_height="match_parent"
         android:layout_alignParentLeft="true"
         android:background="@null"
-        android:alpha="0.5">
+        android:alpha="0.5"
+        >
     </View>
 
     <View android:id="@+id/drop_zone_right"
@@ -236,17 +239,7 @@
     </View>
 
     </RelativeLayout>
-    <TextView
-        android:id="@+id/candidateNumTextView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_alignParentBottom="true"
-        android:gravity="center"
-        android:text="Candidate 1 of 5"
-        android:textColor="@android:color/tertiary_text_light"
-        app:layout_constraintEnd_toStartOf="@+id/shindigRight"
-        app:layout_constraintStart_toStartOf="@+id/shindigLeft"
-        app:layout_constraintTop_toTopOf="@+id/bottomSplit" />
+
 
 
 </android.support.constraint.ConstraintLayout>

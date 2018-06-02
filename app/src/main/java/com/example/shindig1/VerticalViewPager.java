@@ -80,7 +80,7 @@ public class VerticalViewPager extends ViewGroup {
 
     static class ItemInfo {
         Object object;
-        int position;
+        int position=0;
         boolean scrolling;
         float widthFactor;
         float heightFactor;
@@ -1402,8 +1402,8 @@ public class VerticalViewPager extends ViewGroup {
         super.onSizeChanged(w, h, oldw, oldh);
 
         // Make sure scroll position is set correctly.
-        if (w != oldw) {
-            recomputeScrollPosition(w, oldw, mPageMargin, mPageMargin);
+        if (h != oldh) {
+            recomputeScrollPosition(h, oldh, mPageMargin, mPageMargin);
         }
     }
 
@@ -1663,7 +1663,7 @@ public class VerticalViewPager extends ViewGroup {
         if (mSeenPositionMin < 0 || position < mSeenPositionMin) {
             mSeenPositionMin = position;
         }
-        if (mSeenPositionMax < 0 || Math.ceil(position + offset) > mSeenPositionMax) {
+        if (mSeenPositionMax < 0 || (float) Math.ceil(position + offset) > mSeenPositionMax) {
             mSeenPositionMax = position + 1;
         }
 
