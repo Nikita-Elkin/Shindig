@@ -1,1 +1,1 @@
-include ':app', ':circlelayout', ':circularlayout'
+include ':app', ':bubblepicker'

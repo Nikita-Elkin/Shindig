@@ -7,11 +7,9 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     tools:context=".Matching"
-    tools:layout_editor_absoluteY="25dp"
-    >
+    tools:layout_editor_absoluteY="25dp">
 
-    <android.support.v4.view.ViewPager
-        xmlns:android="http://schemas.android.com/apk/res/android"
+    <android.support.v4.view.ViewPager xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/pager"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
@@ -77,12 +75,12 @@
         android:layout_marginEnd="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
-        android:autoSizeTextType="uniform"
-        android:padding="8dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
+        android:autoSizeTextType="uniform"
         android:background="@drawable/lets_lunch_button_border"
         android:contentDescription="@string/confirm_button"
+        android:padding="8dp"
         android:text="@string/confirm"
         android:textColor="@color/orange"
         android:textSize="18sp"
@@ -99,14 +97,14 @@
         android:layout_height="0dp"
         android:layout_marginBottom="16dp"
         android:layout_marginEnd="16dp"
-        android:autoSizeTextType="uniform"
-        android:padding="8dp"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
+        android:autoSizeTextType="uniform"
         android:background="@drawable/maybe_later_button_border"
         android:contentDescription="@string/deny_button"
+        android:padding="8dp"
         android:text="@string/deny"
         android:textColor="@color/blue"
         android:textSize="18sp"
@@ -122,7 +120,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:visibility="visible"
-        app:layout_constraintGuide_percent="0.58" />
+        app:layout_constraintGuide_percent="0.5" />
 
     <android.support.constraint.Guideline
         android:id="@+id/topBar"
@@ -179,7 +177,7 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent=".61" />
 
-<!--
+    <!--
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -205,41 +203,59 @@
 -->
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/container"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".Matching"
-        android:id="@+id/container">
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/letsLunchBtn"
+        app:layout_constraintTop_toBottomOf="@id/bottomSplit"
+        tools:context=".Matching">
 
-    <com.example.shindig1.VerticalViewPager
-        android:id="@+id/vp"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
-        android:layout_centerInParent="true"
-        android:clickable="true"
-        tools:layout_editor_absoluteX="68dp"
-        tools:layout_editor_absoluteY="133dp"
-        android:background="@color/blue"
-        />
+        <com.example.shindig1.VerticalViewPager
+            android:id="@+id/vp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:clickable="true"
+            tools:layout_editor_absoluteX="68dp"
+            tools:layout_editor_absoluteY="133dp" />
 
-    <View android:id="@+id/drop_zone_left"
-        android:layout_width="100dp"
-        android:layout_height="match_parent"
-        android:layout_alignParentLeft="true"
-        android:background="@null"
-        android:alpha="0.5"
-        >
-    </View>
+        <View
+            android:id="@+id/drop_zone_left"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:alpha="0.5"
+            android:background="@null"/>
 
-    <View android:id="@+id/drop_zone_right"
-        android:layout_width="100dp"
-        android:layout_height="match_parent"
-        android:layout_alignParentRight="true"
-        android:background="@null"
-        android:alpha="0.5">
-    </View>
+        <View
+            android:id="@+id/drop_zone_right"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:alpha="0.5"
+            android:background="@null"/>
 
     </RelativeLayout>
 
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/topBar"
+        app:layout_constraintBottom_toTopOf="@id/bottomSplit"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:focusable="false"
+        android:clickable="true">
+
+
+        <com.igalata.bubblepicker.rendering.BubblePicker
+            android:id="@+id/bubblePicker"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:keepScreenOn="false" />
+    </FrameLayout>
 
 
 </android.support.constraint.ConstraintLayout>

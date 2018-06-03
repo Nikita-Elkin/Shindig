@@ -9,8 +9,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/circlelayout" />
-            <option value="$PROJECT_DIR$/circularlayout" />
+            <option value="$PROJECT_DIR$/bubblepicker" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

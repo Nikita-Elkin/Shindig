@@ -3,6 +3,7 @@ package com.example.shindig1;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -29,6 +30,10 @@ import com.example.shindig1.SwipeMenuDropZones.DropZone;
 import com.example.shindig1.SwipeMenuDropZones.SwipeMenuDropEvents;
 import com.example.shindig1.SwipeMenuGestureListener.ScrollCallback;
 import com.example.shindig1.VerticalViewPager.OnPageChangeListener;
+import com.igalata.bubblepicker.adapter.BubblePickerAdapter;
+import com.igalata.bubblepicker.model.BubbleGradient;
+import com.igalata.bubblepicker.model.PickerItem;
+import com.igalata.bubblepicker.rendering.BubblePicker;
 
 import java.util.ArrayList;
 
@@ -68,6 +73,20 @@ public class Matching extends AppCompatActivity implements SwipeMenuDropEvents, 
     
     Button letsLunch;
     Button maybeLater;
+
+    BubblePicker bubblePicker;
+
+    String[] bubbles={"You Both Like Running",
+            "You Both Like Leadership",
+            "You Both Went To The Same College",
+            "You Both Enjoy Playing Golf"};
+
+    int images[]={
+            R.drawable.info_icon,
+            R.drawable.info_icon,
+            R.drawable.info_icon,
+            R.drawable.info_icon
+    };
 
     @Override
     public void onWindowFocusChanged(boolean hasFocus) {
@@ -154,6 +173,32 @@ public class Matching extends AppCompatActivity implements SwipeMenuDropEvents, 
 
 		mSwipeManager = new SwipeMenuManager(this, null);
 		mSwipeManager.setViewPager(mPager);
+
+        bubblePicker=findViewById(R.id.bubblePicker);
+        ArrayList<PickerItem> listItems= new ArrayList<>();
+
+        for (int i=0;i<bubbles.length;i++){
+            PickerItem item= new PickerItem();
+            item.setIcon(getDrawable(images[i]));
+            listItems.add(item);
+        }
+
+       // bubblePicker.setAdapter(new BubblePickerAdapter() {
+         //   @Override
+        //  public int getTotalCount() {
+        //       return bubbles.length;
+        //   }
+
+        //  @Override
+        //  public PickerItem getItem(int position) {
+        //       PickerItem item = new PickerItem();
+        //      item.setTitle(bubbles[position]);
+        //      return item;
+        //    }
+        // });
+
+        bubblePicker.setItems(listItems);
+        bubblePicker.setCenterImmediately(true);
     }
 
     @Override
@@ -164,7 +209,6 @@ public class Matching extends AppCompatActivity implements SwipeMenuDropEvents, 
         Log.d(TAG, "onPageSelected! -----> ");
         if (position < mAdapter.getCount()) {
             mCurrentView = mPager.getChildAt(position);
-            mSwipeManager.setCurrentCard(mCurrentView, View.VISIBLE);
         }
     }
 
@@ -207,6 +251,18 @@ public class Matching extends AppCompatActivity implements SwipeMenuDropEvents, 
         lstCards.add(R.drawable.business_card1);
         lstCards.add(R.drawable.business_card2);
         lstCards.add(R.drawable.business_card3);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        bubblePicker.onResume();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        bubblePicker.onPause();
     }
 
 
