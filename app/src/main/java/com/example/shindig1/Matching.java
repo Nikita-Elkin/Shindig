@@ -3,6 +3,7 @@ package com.example.shindig1;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.os.SystemClock;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -50,6 +51,9 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 
 @SuppressLint("NewApi")
 public class Matching extends AppCompatActivity implements SwipeMenuDropEvents, OnPageChangeListener, ScrollCallback {
@@ -68,7 +72,7 @@ public class Matching extends AppCompatActivity implements SwipeMenuDropEvents, 
     private VerticalViewPager mPager = null;
     private PagerAdapter mAdapter = null;
 
-    private View mCurrentView=null;
+    private View mCurrentView=this.getCurrentFocus();
 
     
     Button letsLunch;
@@ -123,7 +127,6 @@ public class Matching extends AppCompatActivity implements SwipeMenuDropEvents, 
         resIds.add(R.drawable.business_card3);
         resIds.add(R.drawable.business_card3);
 
-
         mAdapter = new PagerAdapter() {
 
             @Override
@@ -167,6 +170,19 @@ public class Matching extends AppCompatActivity implements SwipeMenuDropEvents, 
         mPager.setPageTransformer(true, new DepthPageTransformer());
         mPager.setOnPageChangeListener(this);
         mPager.setOnTouchListener(mTouchListener);
+        new Timer().schedule(
+                new TimerTask() {
+                    @Override
+                    public void run() {
+                        mCurrentView = mPager.findViewWithTag(mPager.getCurrentItem());
+                        onPageSelected(1);
+                        onPageSelected(2);
+
+                    }
+                },
+                2000
+        );
+
 
 
         // always set ontouch on viewpager, not this child views
@@ -199,6 +215,7 @@ public class Matching extends AppCompatActivity implements SwipeMenuDropEvents, 
 
         bubblePicker.setItems(listItems);
         bubblePicker.setCenterImmediately(true);
+
     }
 
     @Override
@@ -206,7 +223,7 @@ public class Matching extends AppCompatActivity implements SwipeMenuDropEvents, 
 
     @Override
     public void onPageSelected(int position) {
-        Log.d(TAG, "onPageSelected! -----> ");
+        Log.d(TAG, "onPageSelected! -----> "+position);
         if (position < mAdapter.getCount()) {
             mCurrentView = mPager.getChildAt(position);
         }
@@ -233,15 +250,19 @@ public class Matching extends AppCompatActivity implements SwipeMenuDropEvents, 
 
     @Override
     public void postback_onHorizontalScroll(MotionEvent event, boolean consumed) {
-        if (consumed) {
-            if (mCurrentView == null) {
-                mCurrentView = mPager.findViewWithTag(mPager.getCurrentItem());
+        try {
+            if (consumed) {
+                if (mCurrentView == null) {
+                    mCurrentView = mPager.findViewWithTag(mPager.getCurrentItem());
+                }
+                //mShadow.startDrag(mPager.findViewWithTag(mPager.getCurrentItem()), event, mPager.getLeft(), mPager.getTop());
+                //mShadow.setMotionEvent(this, event, mCurrentView.getX());
+            } else {
+                if (!mShadow.isDragging()) mPager.onTouchEvent(event);
             }
-            mShadow.startDrag(mPager.findViewWithTag(mPager.getCurrentItem()), event, mPager.getLeft(), mPager.getTop());
-            mShadow.setMotionEvent(this, event, mCurrentView.getX());
         }
-        else {
-            if (!mShadow.isDragging()) mPager.onTouchEvent(event);
+        catch(Exception e){
+
         }
     }
 

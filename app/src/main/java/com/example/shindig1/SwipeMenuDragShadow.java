@@ -22,18 +22,18 @@ public class SwipeMenuDragShadow {
     private View mCurrentView = null;
     private ImageView mDragView = null;
 
-    private float mX = 0;
-    private float mTopY = 0;
+    private float mX = 5;
+    private float mTopY = 5;
 
-    private float mMidX = 0;
-    private float mMidY = 0;
+    private float mMidX = 5;
+    private float mMidY = 5;
 
-    private float mInitialX = 0;
-    private float mInitialY = 0;
-    private float mDeltaX = 0;
+    private float mInitialX = 100;
+    private float mInitialY = 100;
+    private float mDeltaX = 5;
 
-    private float mLastX = 0;
-    private float mLastY = 0;
+    private float mLastX = 5;
+    private float mLastY = 5;
 
     private boolean mDragging = false;
     public boolean mDragged = false;

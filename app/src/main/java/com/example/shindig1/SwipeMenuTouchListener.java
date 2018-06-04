@@ -37,7 +37,8 @@ public class SwipeMenuTouchListener implements OnTouchListener {
                 return true;
             case MotionEvent.ACTION_CANCEL:
             case MotionEvent.ACTION_UP:
-                mShadow.stopDrag();
+
+                //mShadow.stopDrag(); This produces an error unless there is a startDrag() before it
                 mDropZones.setExitDragShadow(mShadow);
         }
         return false;

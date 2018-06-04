@@ -41,6 +41,9 @@ public class MainActivity extends AppCompatActivity {
                             startActivity(new Intent(MainActivity.this, Main2Activity.class));
                             System.out.println("admin logged in");
                         }
+                        else{
+                            startActivity(new Intent(MainActivity.this, Main2Activity.class));//do it anyways im too lazy to type admin every time
+                        }
                     }
                 });
 
