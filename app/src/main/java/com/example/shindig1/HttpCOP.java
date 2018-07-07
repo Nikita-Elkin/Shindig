@@ -1,45 +1,70 @@
 package com.example.shindig1;
-import java.net.*;
-import java.io.*;
+import com.android.volley.*;
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.util.LruCache;
+import com.android.volley.toolbox.ImageLoader;
+import com.android.volley.toolbox.Volley;
+
 
 public class HttpCOP {
+    private static HttpCOP singleInstance;
+    private RequestQueue mRequestQueue;
+    private ImageLoader mImageLoader;
+    private static Context mContext;
 
-    private static URLConnection openWebConnection(String phpFile){
-        try{
-            URL serv = new URL(phpFile);
-            return serv.openConnection();
+
+    public static synchronized HttpCOP getInstance(Context context) {
+        if (singleInstance == null) {
+            singleInstance = new HttpCOP(context);
         }
-        catch (Exception e){
-            System.out.println(e);
-            return null;
-        }
+        return singleInstance;
     }
 
-    public static void postData(String phpFile, String urlParameters){//Params should look like: "param1=a&param2=b&param3=c";
-        byte[] postData;
-        int postDataLength;
-        try {
-            postData = urlParameters.getBytes("UTF-8");
-            postDataLength = postData.length;
-            URLConnection urlConnection = openWebConnection(phpFile);
-            HttpURLConnection httpurlConnection = (HttpURLConnection) urlConnection;
-            httpurlConnection.setDoOutput(true);
-            httpurlConnection.setInstanceFollowRedirects( false );
-            httpurlConnection.setRequestMethod("POST");
+    private HttpCOP(Context context) {
+        mContext = context;
+        mRequestQueue = getRequestQueue();
 
-            httpurlConnection.setRequestProperty( "Content-Type", "application/x-www-form-urlencoded");
-            httpurlConnection.setRequestProperty( "charset", "utf-8");
-            httpurlConnection.setRequestProperty( "Content-Length", Integer.toString(postDataLength));
+        mImageLoader = new ImageLoader(mRequestQueue,
+                new ImageLoader.ImageCache() {
+                    private final LruCache<String, Bitmap>
+                            cache = new LruCache<String, Bitmap>(20);
 
-            OutputStream out = httpurlConnection.getOutputStream();
-            out.write(postData);
+                    @Override
+                    public Bitmap getBitmap(String url) {
+                        return cache.get(url);
+                    }
 
-            //httpurlConnection.disconnect();
+                    @Override
+                    public void putBitmap(String url, Bitmap bitmap) {
+                        cache.put(url, bitmap);
+                    }
+                });
+    }
+
+
+
+    public RequestQueue getRequestQueue() {
+        if (mRequestQueue == null) {
+            // getApplicationContext() is key, it keeps you from leaking the
+            // Activity or BroadcastReceiver if someone passes one in.
+            mRequestQueue = Volley.newRequestQueue(mContext.getApplicationContext());
         }
-        catch (Exception e){
-            System.out.println(e);
+        return mRequestQueue;
+    }
+
+    public <T> void addToRequestQueue(Request<T> req,String tag) {
+        req.setTag(tag);
+        getRequestQueue().add(req);
+    }
+
+    public ImageLoader getImageLoader() {
+        return mImageLoader;
+    }
+
+    public void cancelPendingRequests(Object tag) {
+        if (mRequestQueue != null) {
+            mRequestQueue.cancelAll(tag);
         }
-
-
     }
 }
