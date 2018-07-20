@@ -3,6 +3,7 @@ package com.example.shindig1;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
@@ -13,6 +14,15 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import com.android.volley.Response.Listener;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.*;
+import com.android.volley.toolbox.*;
+import org.json.*;
+import android.util.Log;
+
+
+
 
 public class MainActivity extends AppCompatActivity {
     Button b1;
@@ -35,6 +45,21 @@ public class MainActivity extends AppCompatActivity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        final String url = "http://httpbin.org/get?param1=hello";
+                        HttpCOP cop = HttpCOP.getInstance(MainActivity.this);
+                        Response.ErrorListener stderror_listener = new Response.ErrorListener() {
+                            @Override
+                            public void onErrorResponse(VolleyError error) {
+                                Log.e("Volley Error", error.toString());
+                            }
+                        };
+
+                        Request getRequest = new StringRequest(Request.Method.POST, Shinfo.SERVER_ADDRESS,
+                                response -> { Log.d("Volley Response",response.toString());}
+                                , null);
+
+                        cop.addToRequestQueue(getRequest, "Test");
+
                         //Example: HttpCOP.postData("Example.php", "param1="+mEdit.getText().toString());
                         //or make Java static method to determine if login is good or not
                         if (mEdit.getText().toString().equals("admin")) {//for testing purposes only

@@ -14,7 +14,7 @@ public class HttpCOP {
     private static Context mContext;
 
 
-    public static synchronized HttpCOP getInstance(Context context) {
+    public static HttpCOP getInstance(Context context) {
         if (singleInstance == null) {
             singleInstance = new HttpCOP(context);
         }
@@ -25,8 +25,7 @@ public class HttpCOP {
         mContext = context;
         mRequestQueue = getRequestQueue();
 
-        mImageLoader = new ImageLoader(mRequestQueue,
-                new ImageLoader.ImageCache() {
+        mImageLoader = new ImageLoader(mRequestQueue, new ImageLoader.ImageCache() {
                     private final LruCache<String, Bitmap>
                             cache = new LruCache<String, Bitmap>(20);
 
@@ -42,7 +41,20 @@ public class HttpCOP {
                 });
     }
 
+    public <T> void addToRequestQueue(Request<T> req,String tag) {
+        req.setTag(tag);
+        getRequestQueue().add(req);
+    }
 
+    public void cancelPendingRequests(Object tag) {
+        if (mRequestQueue != null) {
+            mRequestQueue.cancelAll(tag);
+        }
+    }
+
+    public ImageLoader getImageLoader() {
+        return mImageLoader;
+    }
 
     public RequestQueue getRequestQueue() {
         if (mRequestQueue == null) {
@@ -53,18 +65,5 @@ public class HttpCOP {
         return mRequestQueue;
     }
 
-    public <T> void addToRequestQueue(Request<T> req,String tag) {
-        req.setTag(tag);
-        getRequestQueue().add(req);
-    }
 
-    public ImageLoader getImageLoader() {
-        return mImageLoader;
-    }
-
-    public void cancelPendingRequests(Object tag) {
-        if (mRequestQueue != null) {
-            mRequestQueue.cancelAll(tag);
-        }
-    }
 }
